@@ -163,7 +163,7 @@ fn hash_array<T>(
             }
         } else {
             for (i, hash) in hashes_buffer.iter_mut().enumerate() {
-                let value = unsafe { array.value_unchecked(i) };
+                let value = unsafe { array.value(i) };
                 *hash = value.hash_one(random_state);
             }
         }
